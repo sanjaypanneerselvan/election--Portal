@@ -42,44 +42,44 @@ const Dashboard = () => {
 
     return (
         <main className="container animate-in">
-            <header className="hero-section">
+            <header className="hero-section" style={{ textAlign: 'center', paddingTop: '32px', paddingBottom: '24px' }}>
                 <motion.div
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h1 className="gradient-text" style={{ fontSize: '4.5rem', marginBottom: '16px', lineHeight: 1.1 }}>Tamil Nadu 2026</h1>
-                    <p style={{ fontSize: '1.4rem', color: 'var(--text-muted)', maxWidth: '800px', margin: '0 auto 48px' }}>
-                        The official digital gateway for the 2026 Assembly Elections. Transperancy, Democracy, and Innovation at your fingertips.
+                    <h1 className="gradient-text" style={{ fontSize: 'clamp(2rem, 8vw, 4.5rem)', marginBottom: '16px', lineHeight: 1.1 }}>Tamil Nadu 2026</h1>
+                    <p style={{ fontSize: 'clamp(0.95rem, 3vw, 1.3rem)', color: 'var(--text-muted)', maxWidth: '700px', margin: '0 auto 36px' }}>
+                        The official digital gateway for the 2026 Assembly Elections. Transparency, Democracy, and Innovation at your fingertips.
                     </p>
-                    <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
+                    <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
                         <Link to="/candidates" className="btn btn-primary">
-                            Explore Candidates <Users size={20} />
+                            Explore Candidates <Users size={18} />
                         </Link>
                         <Link to="/awareness" className="btn glass">
-                            Voter Rights <CheckCircle size={20} />
+                            Voter Rights <CheckCircle size={18} />
                         </Link>
                     </div>
                 </motion.div>
             </header>
 
             {announcements.length > 0 && (
-                <section style={{ marginBottom: '60px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
-                        <Megaphone size={24} color="var(--primary)" />
-                        <h2 style={{ fontSize: '1.4rem' }}>Official Broadcasts</h2>
+                <section style={{ marginBottom: '40px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
+                        <Megaphone size={22} color="var(--primary)" />
+                        <h2 style={{ fontSize: 'clamp(1.1rem, 4vw, 1.4rem)' }}>Official Broadcasts</h2>
                     </div>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '20px' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
                         {announcements.map(a => (
-                            <div key={a.id} className="card glass" style={{ padding: '24px', borderLeft: `4px solid ${a.type === 'Alert' ? '#ef4444' : 'var(--primary)'}` }}>
-                                <div style={{ display: 'flex', gap: '12px', alignItems: 'center', marginBottom: '12px' }}>
-                                    {a.type === 'Alert' ? <AlertTriangle size={18} color="#ef4444" /> : <Calendar size={18} color="var(--text-muted)" />}
-                                    <span style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: a.type === 'Alert' ? '#ef4444' : 'var(--text-muted)' }}>
+                            <div key={a.id} className="card glass" style={{ padding: '20px', borderLeft: `4px solid ${a.type === 'Alert' ? '#ef4444' : 'var(--primary)'}` }}>
+                                <div style={{ display: 'flex', gap: '10px', alignItems: 'center', marginBottom: '10px' }}>
+                                    {a.type === 'Alert' ? <AlertTriangle size={16} color="#ef4444" /> : <Calendar size={16} color="var(--text-muted)" />}
+                                    <span style={{ fontSize: '0.72rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: a.type === 'Alert' ? '#ef4444' : 'var(--text-muted)' }}>
                                         {a.type} • {new Date(a.createdAt).toLocaleDateString()}
                                     </span>
                                 </div>
-                                <h3 style={{ fontSize: '1.2rem', marginBottom: '10px' }}>{a.title}</h3>
-                                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem', lineHeight: '1.6' }}>{a.content}</p>
+                                <h3 style={{ fontSize: '1.1rem', marginBottom: '8px' }}>{a.title}</h3>
+                                <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.88rem', lineHeight: '1.55' }}>{a.content}</p>
                             </div>
                         ))}
                     </div>
@@ -92,23 +92,23 @@ const Dashboard = () => {
                 <StatCard title="Issues Resolved" value={stats.solved} icon={CheckCircle} color="#10b981" />
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px', marginTop: '60px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginTop: '40px' }}>
                 <Link to="/parties" className="card glass" style={{ textDecoration: 'none', color: 'inherit' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div>
-                            <h3 style={{ marginBottom: '12px' }}>Tamil Nadu Political Alliances</h3>
-                            <p style={{ color: 'var(--text-muted)' }}>Deep dive into alliances, historical performance, and the 2026 manifesto of major fronts.</p>
+                            <h3 style={{ marginBottom: '10px', fontSize: 'clamp(1rem, 3vw, 1.2rem)' }}>Tamil Nadu Political Alliances</h3>
+                            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Deep dive into alliances, performance, and the 2026 manifesto.</p>
                         </div>
-                        <ArrowRight size={28} color="var(--primary)" />
+                        <ArrowRight size={24} color="var(--primary)" style={{ flexShrink: 0, marginLeft: '12px' }} />
                     </div>
                 </Link>
                 <Link to="/complaints" className="card glass" style={{ textDecoration: 'none', color: 'inherit' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div>
-                            <h3 style={{ marginBottom: '12px' }}>Citizen Report Center</h3>
-                            <p style={{ color: 'var(--text-muted)' }}>Found an election irregularity? Report it instantly and track the resolution process.</p>
+                            <h3 style={{ marginBottom: '10px', fontSize: 'clamp(1rem, 3vw, 1.2rem)' }}>Citizen Report Center</h3>
+                            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Found an election irregularity? Report it instantly.</p>
                         </div>
-                        <ArrowRight size={28} color="var(--primary)" />
+                        <ArrowRight size={24} color="var(--primary)" style={{ flexShrink: 0, marginLeft: '12px' }} />
                     </div>
                 </Link>
             </div>

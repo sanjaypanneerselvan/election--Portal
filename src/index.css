@@ -231,30 +231,103 @@ body {
   letter-spacing: 0.05em;
 }
 
-/* --- Mobile Responsiveness --- */
+/* ================================
+   MOBILE RESPONSIVENESS - FULL OVERHAUL
+   ================================ */
+
+/* Tablet */
 @media (max-width: 1024px) {
-  .container { padding: 30px 20px; }
+  .container { padding: 28px 20px; }
 }
 
+/* Mobile - Brighter & Cleaner */
 @media (max-width: 768px) {
   :root {
-    --card-radius: 20px;
+    --card-radius: 18px;
+    --glass: rgba(20, 30, 60, 0.85);       /* Brighter glass bg */
+    --glass-border: rgba(255, 255, 255, 0.15); /* More visible borders */
+    --text-muted: #b0c4de;                  /* Lighter muted text */
   }
-  
-  .container { padding: 20px 16px; }
-  
-  h1 { font-size: 2.5rem !important; }
-  h2 { font-size: 2rem !important; }
-  
-  .card { padding: 24px; }
-  
+
+  body {
+    background: radial-gradient(circle at top right, #2d247a, #060d2e, #020617);
+  }
+
+  /* Container */
+  .container { padding: 16px 14px; }
+
+  /* Cards - brighter and breathable */
+  .card {
+    padding: 20px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: linear-gradient(135deg, rgba(30, 40, 80, 0.9), rgba(15, 20, 50, 0.9));
+  }
+
+  /* Stat Cards - more vivid */
   .stats-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  /* Typography */
+  h1 { font-size: 2.2rem !important; line-height: 1.2 !important; }
+  h2 { font-size: 1.7rem !important; }
+  h3 { font-size: 1.3rem !important; }
+  p  { font-size: 0.95rem; }
+
+  /* Gradient text glows more on mobile */
+  .gradient-text {
+    background: linear-gradient(135deg, #ffffff, var(--primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 12px rgba(255, 62, 62, 0.4));
+  }
+
+  /* Buttons - touchable */
+  .btn {
+    padding: 12px 22px;
+    font-size: 0.95rem;
+    border-radius: 14px;
+    gap: 8px;
+  }
+  .btn-primary {
+    box-shadow: 0 8px 24px rgba(255, 62, 62, 0.4);
+  }
+
+  /* Input */
+  .input-glass { padding: 14px 16px; font-size: 1rem; border-radius: 12px; }
+
+  /* Badge */
+  .badge { font-size: 0.65rem; padding: 4px 10px; }
+
+  /* Hero Section */
+  .hero-section {
+    padding: 30px 0 20px;
+    text-align: center;
+  }
+
+  /* Grid overrides for page layouts */
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="gridTemplateColumns: '1fr 1fr'"] {
+    grid-template-columns: 1fr !important;
   }
 }
 
+/* Small phones */
 @media (max-width: 480px) {
-  h1 { font-size: 2rem !important; }
-  .btn { width: 100%; justify-content: center; }
+  .container { padding: 12px 12px; }
+  h1 { font-size: 1.9rem !important; }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn { width: 100%; justify-content: center; padding: 14px; }
+
+  .card { padding: 18px 14px; border-radius: 16px; }
+
+  /* Announcement cards tighter */
+  .category-chip { padding: 8px 14px; font-size: 0.8rem; }
 }

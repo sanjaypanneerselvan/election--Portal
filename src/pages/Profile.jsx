@@ -34,12 +34,12 @@ const Profile = () => {
 
     return (
         <main className="container animate-in" style={{ maxWidth: '800px', paddingBottom: '100px' }}>
-            <header style={{ marginBottom: '60px', textAlign: 'center', paddingTop: '40px' }}>
-                <h1 className="gradient-text" style={{ fontSize: '3rem', fontWeight: 900, marginBottom: '16px' }}>Digital Identity</h1>
-                <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem' }}>Manage your electoral credentials and contact information.</p>
+            <header style={{ marginBottom: '40px', textAlign: 'center', paddingTop: '30px' }}>
+                <h1 className="gradient-text" style={{ fontSize: 'clamp(1.8rem, 6vw, 3rem)', fontWeight: 900, marginBottom: '12px' }}>Digital Identity</h1>
+                <p style={{ color: 'var(--text-muted)', fontSize: 'clamp(0.9rem, 3vw, 1.1rem)' }}>Manage your electoral credentials and contact information.</p>
             </header>
 
-            <div className="card glass" style={{ padding: '48px', position: 'relative' }}>
+            <div className="card glass" style={{ padding: 'clamp(20px, 5vw, 48px)', position: 'relative' }}>
                 <div style={{ position: 'absolute', top: '-40px', left: '50%', transform: 'translateX(-50%)' }}>
                     <div style={{ 
                         width: '80px', height: '80px', borderRadius: '24px', 
@@ -65,7 +65,7 @@ const Profile = () => {
                 </div>
 
                 <form onSubmit={handleUpdate}>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px', marginBottom: '32px' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px', marginBottom: '24px' }}>
                         <div>
                             <label className="form-label" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                                 <User size={16} /> Full Name
