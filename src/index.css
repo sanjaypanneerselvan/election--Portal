@@ -230,3 +230,31 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 1024px) {
+  .container { padding: 30px 20px; }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --card-radius: 20px;
+  }
+  
+  .container { padding: 20px 16px; }
+  
+  h1 { font-size: 2.5rem !important; }
+  h2 { font-size: 2rem !important; }
+  
+  .card { padding: 24px; }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 2rem !important; }
+  .btn { width: 100%; justify-content: center; }
+}

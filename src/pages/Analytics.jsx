@@ -97,13 +97,15 @@ const Analytics = () => {
             </div>
 
             {/* Matrix Table */}
-            <div className="card glass" style={{ padding: 0, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)' }}>
-                <div style={{ 
-                    overflowX: 'auto', background: 'rgba(0,0,0,0.2)',
-                    display: 'grid', gridTemplateColumns: '250px repeat(5, 1fr)',
-                    fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '1px',
-                    borderBottom: '1px solid rgba(255,255,255,0.1)'
-                }}>
+            <div className="card glass" style={{ padding: 0, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)', marginBottom: '40px' }}>
+                <div style={{ overflowX: 'auto', width: '100%' }}>
+                    <div style={{ 
+                        minWidth: '1000px', // Ensure it doesn't squash too much
+                        background: 'rgba(0,0,0,0.2)',
+                        display: 'grid', gridTemplateColumns: '250px repeat(5, 1fr)',
+                        fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '1px',
+                        borderBottom: '1px solid rgba(255,255,255,0.1)'
+                    }}>
                     <div style={{ padding: '24px' }}>Constituency</div>
                     <div style={{ padding: '24px', color: '#c0392b' }}>SPA (DMK+)</div>
                     <div style={{ padding: '24px', color: '#b2d33c' }}>NDA (AIADMK+)</div>
@@ -112,7 +114,7 @@ const Analytics = () => {
                     <div style={{ padding: '24px', color: '#f1c40f' }}>AMMK+</div>
                 </div>
 
-                <div style={{ maxHeight: '700px', overflowY: 'auto' }}>
+                <div style={{ maxHeight: '700px', overflowY: 'auto', minWidth: '1000px' }}>
                     {filteredMatrix.map((row, idx) => (
                         <div key={row.name} style={{ 
                             display: 'grid', gridTemplateColumns: '250px repeat(5, 1fr)',
