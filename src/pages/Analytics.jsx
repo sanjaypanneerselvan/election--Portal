@@ -159,6 +159,7 @@ const Analytics = () => {
                     ))}
                 </div>
             </div>
+        </div>
 
             {loading && <div className="text-center" style={{ padding: '100px' }}>Synchronizing Battlefield Data...</div>}
             
